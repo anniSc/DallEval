@@ -56,8 +56,10 @@ def main(args):
 
         with open(args.savepath, 'w') as f:
             json.dump(output, f, indent=2)
+            print("I save a json")
 
 if __name__ == "__main__":
+    print("main is running")
     args: Namespace = ap.parse_args()
 
     main(args)
