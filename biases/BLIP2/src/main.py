@@ -16,6 +16,7 @@ from model.blip2_model import Blip2Model
 A = [ "boots", "slippers", "jeans", "shorts", "slacks", "a dress", "a skirt", "a suit", "a shirt", "a uniform", "a jacket", "a hat", "a tie", "a mask", "gloves" ]
 
 def main(args):
+    args.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if args.load_output == "none":
         print("Loading Data")
         dataset = GeneratedImagesDataset(args)
